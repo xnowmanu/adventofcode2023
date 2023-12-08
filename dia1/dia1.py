@@ -1,5 +1,5 @@
 #Open input
-filename = 'input_test.txt'
+filename = 'input.txt'
 with open(filename) as file:
     lines = [line.rstrip() for line in file]
 #Just test the input
@@ -44,12 +44,11 @@ for line in lines:
       break
     except ValueError:
       partial_result = partial_result + line[i]
-      keys = digits.keys()
-      for key in keys:
+      for key in digits:
         if partial_result.__contains__(key) :
           string_int = digits[key]
           found = 1
-        break
+          break
       if found == 1 :
         result += string_int * 10
         found = 0
@@ -67,12 +66,11 @@ for line in lines:
       break
     except ValueError:
       partial_result = line[j] + partial_result
-      keys = digits.keys()
-      for key in keys:
+      for key in digits:
         if partial_result.__contains__(key) :
           string_int = digits[key]
           found = 1
-        break
+          break
       if found == 1 :
         result += string_int
         found = 0
