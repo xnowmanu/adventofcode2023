@@ -11,6 +11,16 @@ class Ronda:
 class Juego:
     juegos = []
 
+
+def parseGame (line):
+    #(Game \d:){1}(( \d \w*,)+( \d \w*;))*( \d \w*,)+
+    aux = str.split(line, ':')
+    return aux
+
+def getGameNumber(text):
+    aux = re.match('(\d)', text)
+    return aux
+
 #Open input
 filename = './input_test.txt'
 with open(filename) as file:
@@ -33,13 +43,12 @@ lista_juegos = []
 # print(lista_juegos)
 
 for line in lines:
-    for c in 
+    game = parseGame(line)
+    game_number = getGameNumber(game[0])
+    list_rounds_str = game[1]
 
 
 
 #Print result
 #print(result)
 
-def parseGame (line):
-#(Game \d:){1}(( \d \w*,)+( \d \w*;))*( \d \w*,)+
-    re.
